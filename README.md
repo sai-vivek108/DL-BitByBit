@@ -26,6 +26,7 @@ Well, you can always clone it. Here's how you can jump into the madness:
 ```bash
 git clone https://github.com/yourusername/DL-BitByBit.git
 cd DL-BitByBit
+# To run the MLP or other models when available!
 python mlp/mlp.py
 ```
 
