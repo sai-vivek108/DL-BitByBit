@@ -16,7 +16,7 @@ No fancy TensorFlow or PyTorch just yet. Like cooking a dish from the scratch (I
 |--------|-------------|
 | `mlp/` | A simple Multi-Layer Perceptron (yes, with backpropagation and everything! You'll see when it's less of a mess) |
 | `gpt/` | Coming Soon (Yet to start wrestling with Transformers) |
-|`more will follow`|
+|`more will follow`| |
 ---
 
 ## How to Use
@@ -27,7 +27,7 @@ Well, you can always clone it. Here's how you can jump into the madness:
 git clone https://github.com/yourusername/DL-BitByBit.git
 cd DL-BitByBit
 python mlp/mlp.py
-
+```
 
 ## Contribute (or Just watch the Mess)
 
