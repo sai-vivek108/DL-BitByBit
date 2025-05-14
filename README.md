@@ -26,6 +26,7 @@ Well, you can always clone it. Here's how you can jump into the madness:
 ```bash
 git clone https://github.com/yourusername/DL-BitByBit.git
 cd DL-BitByBit
+# To run the MLP or other models when available!
 python mlp/mlp.py
 ```
 
@@ -35,6 +36,6 @@ This is more of a one man show (for now atleast), but if you want to contribute,
 
 ## Resources
 
-[**Andrej Karpathy**](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) : A huge thank you to Andrej, while I never had any problem understanding the math, I always needed a good starting point and this playlist in particular is like a *treasure trove*. Seriously, can't recommend it enough. 
+[**Andrej Karpathy**](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) : A huge thank you to Andrej! while I never had any problem understanding the math, I always needed a good starting point and this playlist in particular is like a *treasure trove*. Seriously, can't recommend it enough. 
 
 [**3B1B**](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi): I've always followed 3B1B for the great physiscs and Math content. But why this playlist? coz it's *fire*. It helped me a ton in visualizing and understanding.
