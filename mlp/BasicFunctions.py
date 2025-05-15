@@ -2,12 +2,12 @@ class DiffNode:
     """To process a single scalar value"""
     def __init__(self, input, _children=()):
         self.data = input
-        self._backward = lambda None
+        self._backward = lambda: None
         self.grad = 0
         self._prev = set(_children)     # set of parent nodes
 
     def __repr__(self):
-        return f"DiffNode(data = {self.data}, grad = {self.grad})"#, parent = {self._prev}
+        return f"data = {self.data}, grad = {self.grad}"#, parent = {self._prev}
 
     #divison: self/other (but we substituted it for multiplication)
     def __truediv__(self, other):
