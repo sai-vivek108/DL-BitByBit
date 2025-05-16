@@ -99,6 +99,20 @@ class DiffNode:
         out._backward = _backward
         return out
     
+    # sigmoid function for probabilities
+    def sigmoid(self):
+        x=self.data
+        s = 1/(1+math.exp(x**-1))
+        out = DiffNode(s, (self,))
+
+        def _backward():
+            self.grad+= s*(1-s)     # first derivative: sigmoid(x) * (1- sigmoid(x))
+        out._backward = _backward
+        return out
+
+    
+    # def relu(self):
+    #     return 0
     # back propagation (using toplogical sort)
     # The reason to choose Topological sort is because it ensures that no node is visited before all it's 
     # dependencies are processed. Without it, when we call _gradient, it wpuld use the gradient that hasn't been updated
