@@ -67,12 +67,12 @@ class DiffNode:
     # power: self^other
     def __pow__(self,other):
         if isinstance(other, (int, float)):
-            out = DiffNode(self.data**other, (self, other))
+            out = DiffNode(self.data**other, (self,))
             def _backward():
                 self.grad+= (other) * (self.data)**(other-1)
-            out.grad = _backward
+            out._backward = _backward
         elif isinstance(other, DiffNode):
-            out= DiffNode(self**other.data, (self, other))
+            out= DiffNode(self.data**other.data, (self, other))
             def _backward():
                 self.grad+= (other.data) * (self.data)**(other.data-1)
             out._backward = _backward
@@ -88,31 +88,6 @@ class DiffNode:
             self.grad+=out.data*out.grad
         return out
     
-    # hyperboloc tangent activation funtion
-    def tanh(self):
-        x=self.data
-        t= (math.exp(2*x)-1)/(math.exp(2*x)+1)
-        out=DiffNode(t, (self,))
-
-        def _backward():
-            self.grad+=(1-t**2)*out.grad
-        out._backward = _backward
-        return out
-    
-    # sigmoid function for probabilities
-    def sigmoid(self):
-        x=self.data
-        s = 1/(1+math.exp(x**-1))
-        out = DiffNode(s, (self,))
-
-        def _backward():
-            self.grad+= s*(1-s)     # first derivative: sigmoid(x) * (1- sigmoid(x))
-        out._backward = _backward
-        return out
-
-    
-    # def relu(self):
-    #     return 0
     # back propagation (using toplogical sort)
     # The reason to choose Topological sort is because it ensures that no node is visited before all it's 
     # dependencies are processed. Without it, when we call _gradient, it wpuld use the gradient that hasn't been updated
